@@ -29,4 +29,20 @@ type Query {
     reviews: [Review]
     review(id: ID!): Review
 }
+
+type Mutation {
+    addGame(addGame: AddGameInput!): Game
+    updateGame(id: ID!, editGame: EditGameInput!): Game
+    deleteGame(id: ID!): String
+}
+
+input AddGameInput {
+    title:String!
+    platform: [String!]!
+}
+
+input EditGameInput {
+    title:String
+    platform: [String!]
+}
 `;
